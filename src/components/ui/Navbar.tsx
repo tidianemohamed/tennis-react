@@ -57,14 +57,14 @@ export default function Navbar() {
               whileTap={{ scale: 0.95 }}
               className={`flex items-center gap-2 px-4 py-2 rounded-lg font-bold transition text-sm border shadow-lg relative overflow-hidden ${
                 isPlayers
-                  ? 'bg-indigo-600 border-indigo-500 text-white shadow-indigo-500/30'
-                  : 'bg-indigo-600 hover:bg-indigo-500 text-white border-indigo-500 shadow-indigo-500/20'
+                  ? 'bg-green-600 border-green-500 text-white shadow-green-500/30'
+                  : 'bg-green-600 hover:bg-green-500 text-white border-green-500 shadow-green-500/20'
               }`}
             >
               {isPlayers && (
                 <motion.div
                   layoutId="activeTabPlayers"
-                  className="absolute inset-0 bg-indigo-500"
+                  className="absolute inset-0 bg-green-500"
                   transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                 />
               )}
