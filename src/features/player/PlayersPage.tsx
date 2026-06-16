@@ -4,7 +4,7 @@ import { UserPlus, ArrowLeft, Trash2, Edit2, Check, X } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 // URL base per le chiamate API verso il backend Go/Node
-const BASE_URL = 'http://localhost:8080/api';
+const BASE_URL = 'https://tennis-php-production.up.railway.app/api';
 
 const PlayersPage = () => {
   // --- STATI (STATE MANAGEMENT) ---
