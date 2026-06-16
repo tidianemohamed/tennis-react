@@ -20,10 +20,14 @@ export default function Dashboard() {
   // STATO PER LE TABS
   const [activeTab, setActiveTab] = useState<'attivi' | 'conclusi'>('attivi');
 
+  // URL del backend di Railway configurato e funzionante
+  const BASE_URL = 'https://tennis-php-production.up.railway.app/api';
+
   const loadTournaments = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('http://localhost:8080/api/tournaments');
+      // ✅ Aggiornato per puntare a Railway
+      const response = await axios.get(`${BASE_URL}/tournaments`);
       setTournaments(Array.isArray(response.data) ? response.data : []);
     } catch (err) {
       console.error("Errore nel caricamento:", err);
@@ -39,7 +43,8 @@ export default function Dashboard() {
   const handleCreate = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:8080/api/tournaments', formData);
+      // ✅ Aggiornato per puntare a Railway
+      await axios.post(`${BASE_URL}/tournaments`, formData);
       setFormData({ name: '', date: '', location: '' }); 
       loadTournaments(); 
     } catch (err) {
@@ -62,7 +67,6 @@ export default function Dashboard() {
           <h1 className="text-4xl font-black italic tracking-tighter uppercase text-green-500">Pro Bracket</h1>
           <p className="text-slate-500 font-bold uppercase text-[10px] tracking-[0.3em]">Tournament Manager</p>
         </div>
-        
       </div>
 
       {/* 1. SEZIONE CREAZIONE */}

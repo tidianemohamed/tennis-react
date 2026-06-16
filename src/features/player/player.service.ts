@@ -1,8 +1,10 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:8080/api';
+const BASE_URL = 'https://tennis-php-production.up.railway.app/api';
 
 export const PlayerService = {
+
+
   getByTournament: async (tournamentId: number) => {
     const { data } = await axios.get(`${BASE_URL}/players?tournament_id=${tournamentId}`);
     return Array.isArray(data) ? data : [];
