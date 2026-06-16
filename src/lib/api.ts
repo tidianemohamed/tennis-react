@@ -1,8 +1,10 @@
 import axios from 'axios';
 
 const api = axios.create({
-  // Nota: Assicurati che la porta 8080 sia quella corretta del tuo server PHP
-  baseURL: 'http://localhost:8080/api', 
+  // Legge la variabile di Vercel in produzione, altrimenti usa localhost come ruota di scorta in locale
+  baseURL: import.meta.env.VITE_API_URL 
+    ? `${import.meta.env.VITE_API_URL}/api` 
+    : 'http://localhost:8080/api', 
   headers: {
     'Content-Type': 'application/json',
   },
