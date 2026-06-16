@@ -1,10 +1,8 @@
 import axios from 'axios';
 
 const api = axios.create({
-  // Legge la variabile di Vercel in produzione, altrimenti usa localhost come ruota di scorta in locale
-  baseURL: import.meta.env.VITE_API_URL 
-    ? `${import.meta.env.VITE_API_URL}/api` 
-    : 'http://localhost:8080/api', 
+  // Inseriamo a mano l'URL di Railway per forzare il browser a smettere di cercare localhost
+  baseURL: 'https://tennis-php-production.up.railway.app/api', 
   headers: {
     'Content-Type': 'application/json',
   },
