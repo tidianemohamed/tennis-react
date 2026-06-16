@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:8080/api';
+// ✅ Aggiornato l'URL base puntando direttamente al backend di Railway
+const BASE_URL = 'https://tennis-php-production.up.railway.app/api';
 
 export const TournamentService = {
   getById: async (id: string) => {
